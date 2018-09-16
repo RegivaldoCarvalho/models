@@ -99,7 +99,7 @@ Download and install the 3.0 release of protoc, then unzip the file.
 wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip
 unzip protobuf.zip
 ```
-For Windows 10 use the code above. Please note that we are using the 3.4 release of protoc
+For Windows 10 use the code below. Please note that we are using the 3.4 release of protoc
 
 ```bash
 # From tensorflow/models/research/
@@ -113,7 +113,7 @@ Run the compilation process again, but use the downloaded version of protoc
 # From tensorflow/models/research/
 ./bin/protoc object_detection/protos/*.proto --python_out=.
 ```
-For Windows 10 copy protoc.exe from tensorflow\models\research\bin to tensorflow\models\research\ 
+For Windows 10 copy protoc.exe from tensorflow\models\research\bin to tensorflow\models\research\ and run de code below.
 
 ```bash
 # From tensorflow/models/research/
@@ -132,7 +132,7 @@ tensorflow/models/research/:
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
-For Windows 10 use the code above 
+For Windows 10 use the code below. 
 
 ``` bash
 # From tensorflow/models/research/
