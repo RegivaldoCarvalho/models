@@ -88,6 +88,10 @@ protoc object_detection/protos/*.proto --python_out=.
 **Note**: If you're getting errors while compiling, you might be using an incompatible protobuf compiler. If that's the case, use the following manual installation
 
 ## Manual protobuf-compiler installation and usage
+
+The latest release of Protocol Buffers can be found on the release page above:
+https://github.com/protocolbuffers/protobuf/tags
+
 Download and install the 3.0 release of protoc, then unzip the file.
 
 ```bash
@@ -95,12 +99,25 @@ Download and install the 3.0 release of protoc, then unzip the file.
 wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip
 unzip protobuf.zip
 ```
+For Windows 10 use the code above. Please note that we are using the 3.4 release of protoc
+
+```bash
+# From tensorflow/models/research/
+curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v3.4.0/protoc-3.4.0-win32.zip
+tar xzf protoc-3.4.0-win32.zip
+```
 
 Run the compilation process again, but use the downloaded version of protoc
 
 ```bash
 # From tensorflow/models/research/
 ./bin/protoc object_detection/protos/*.proto --python_out=.
+```
+For Windows 10 copy protoc.exe from tensorflow\models\research\bin to tensorflow\models\research\ 
+
+```bash
+# From tensorflow/models/research/
+protoc object_detection/protos/*.proto --python_out=.
 ```
 
 ## Add Libraries to PYTHONPATH
@@ -114,6 +131,18 @@ tensorflow/models/research/:
 # From tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
+
+For Windows 10 use the code above 
+
+``` bash
+# From tensorflow/models/research/
+SET PYTHONPATH=%cd%;%cd%\slim
+# Test 
+echo %PYTHONPATH%
+```
+it should give you somethine like
+YOUR_FOLDER\models\research;YOUR_FOLDER\models\research\slim
+
 
 Note: This command needs to run from every new terminal you start. If you wish
 to avoid running this manually, you can add it as a new line to the end of your
